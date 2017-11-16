@@ -7,8 +7,134 @@ Dark green: #28b485
 
 */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 20px;
+}
+
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    /* clip-path: polygon(x y, x y, x y); */
+    /* TRIANGLE */
+    /* clip-path: polygon(50% 0, 100% 100%, 0 100%); */
+    /* Tool for Clip Path: https: //bennettfeely.com/clippy/ */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+
+/* .logo-box:hover {
+    animation: moveInLeft 2s ease-in-out;
+    cursor: pointer;
+} */
+
+.text-box {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    /* Animation-Shakyness-Fix*/
+    backface-visibility: hidden;
+}
+
+
+/* ARTICLE ABOUT ANIMATION TIMING FUNCTION:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function */
+
+
+/* Animation-Shakyness-Fix 
+    backface-visibility: hidden;
+*/
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 50px;
+    /* ANIMATION-PROPERTIES */
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    /* 
+    animation-delay: 30S;
+    animation-iteration-count: 3;    
+    */
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700px;
+    letter-spacing: 15px;
+    animation: moveInRight 2s ease-in-out;
+    /* animation-name: moveInRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out; */
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn-wh{
+    background-color: #fff;
+    color: #777;
 }
